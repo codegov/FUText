@@ -1,0 +1,204 @@
+//
+//  GWWCommentTextView.m
+//  GroupWenWen
+//
+//  Created by javalong on 16/5/10.
+//  Copyright © 2016年 evan. All rights reserved.
+//
+
+#import "GWWCommentTextView.h"
+//#import "UIImage+Theme.h"
+//#import "UIControl+RACSignalSupport.h"
+
+@implementation GWWCommentTextView
+{
+    UILabel *_numbleLabel;
+}
+
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self)
+//    {
+//        _rac_sendSignal = [RACSubject subject];
+//        
+//        _headImageView = [[GWWImageView alloc] init];
+//        _headImageView.backgroundColor = [UIColor clearColor];
+//        _headImageView.contentMode = UIViewContentModeScaleToFill;
+//        _headImageView.layer.masksToBounds = YES;
+//        _headImageView.layer.cornerRadius = 33/2.0;
+//        
+//        self.textView.needManageScroll = NO;
+//        self.textView.placeHolder.font = [UIFont systemFontOfSize:[[TWSkinManager sharedManager] fontSizeForKey:font15Skin]];
+//        self.textView.placeHolder.textColor.color = [UIColor colorWithString:@"#a8a8a8"];
+//        self.textView.placeHolder.string = @"发表我的观点";
+//        self.textView.text.font = [UIFont systemFontOfSize:[[TWSkinManager sharedManager] fontSizeForKey:font15Skin]];
+//        self.textView.text.textColor.color = [UIColor colorWithString:@"#000000"];
+//        self.textView.layer.masksToBounds = YES;
+//        self.textView.layer.cornerRadius = 3.0;
+//        self.textView.layer.borderWidth  = 0.5;
+//        self.textView.layer.borderColor  = [UIColor colorWithString:@"#E0E0E0"].CGColor;
+//        self.textView.backgroundColor = [UIColor whiteColor];
+//        self.textView.edgeInsets = UIEdgeInsetsMake(6.0, 6.0, 6.0, 6.0);
+//        
+//        _unloginButton = [[UIButton alloc] init];
+//        _unloginButton.layer.masksToBounds = YES;
+//        _unloginButton.layer.cornerRadius = 3.0;
+//        _unloginButton.layer.borderWidth  = 0.5;
+//        _unloginButton.layer.borderColor  = [UIColor colorWithString:@"#E0E0E0"].CGColor;
+//        _unloginButton.backgroundColor = [UIColor whiteColor];
+//        [_unloginButton setTitle:@"请登录后再评论" forState:UIControlStateNormal];
+//        _unloginButton.titleLabel.font = [UIFont systemFontOfSize:[[TWSkinManager sharedManager] fontSizeForKey:font15Skin]];
+//        [_unloginButton setTitleColor:[UIColor colorWithString:@"#a8a8a8"] forState:UIControlStateNormal];
+//        [_unloginButton addTarget:self action:@selector(doAction) forControlEvents:UIControlEventTouchUpInside];
+//        _unloginButton.hidden = [[GWWLoginManager sharedLoginManager] isVisitor] ? NO : YES;
+//        
+//        _sendButton    = [[UIButton alloc] init];
+//        [_sendButton setBackgroundImage:[UIImage imageFromColor:[UIColor colorWithString:@"#fc8652"]] forState:UIControlStateNormal];
+//        [_sendButton setBackgroundImage:[UIImage imageFromColor:[UIColor colorWithString:@"#E6E6E6"]] forState:UIControlStateDisabled];
+//        [_sendButton setTitleColor:[UIColor colorWithString:@"#FFFFFF"] forState:UIControlStateNormal];
+//        [_sendButton setTitleColor:[UIColor colorWithString:@"#C9C9C9"] forState:UIControlStateDisabled];
+//        [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
+//        _sendButton.titleLabel.font = [UIFont systemFontOfSize:[[TWSkinManager sharedManager] fontSizeForKey:font15Skin]];
+//        _sendButton.layer.masksToBounds = YES;
+//        _sendButton.layer.cornerRadius = 3.0;
+//        _sendButton.enabled = YES;//NO;
+//        __weak typeof (&*self)weakSelf = self;
+//        [[_sendButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+//            if (weakSelf.text.length > weakSelf.allowInputMax)
+//            {
+//                NSString *msg = weakSelf.preInfo.length ? weakSelf.preInfo : @"评论";
+//                [weakSelf.viewController showErrorTip:[NSString stringWithFormat:@"%@最多%@字哦", msg, @(weakSelf.allowInputMax).stringValue]];
+//                return ;
+//            } else if (weakSelf.text.length < 2)
+//            {
+//                NSString *msg = weakSelf.preInfo.length ? weakSelf.preInfo : @"评论";
+//                msg = [msg stringByAppendingString:@"内容不得少于2字"];
+//                [weakSelf.viewController showErrorTip:msg];
+//                return;
+//            }
+//            [weakSelf.rac_sendSignal sendNext:weakSelf.text];
+//            weakSelf.sendButton.enabled = NO;
+//            [weakSelf resignFirstResponder];
+//        }];
+//        
+//        _numbleLabel = [[UILabel alloc] init];
+//        _numbleLabel.textAlignment = NSTextAlignmentCenter;
+//        _numbleLabel.backgroundColor = [UIColor clearColor];
+//        _numbleLabel.textColor = [UIColor colorWithString:@"#B6B6B6"];
+//        _numbleLabel.font = [UIFont systemFontOfSize:[[TWSkinManager sharedManager] fontSizeForKey:font13Skin]];
+//        _numbleLabel.hidden = YES;
+//        
+//        [self addSubview:_headImageView];
+//        [self addSubview:_sendButton];
+//        [self addSubview:_numbleLabel];
+//        [self addSubview:_unloginButton];
+//        [self bringSubviewToFront:_unloginButton];
+//        [self addLineView:^(UIView *line, UIViewOfAppType *type) {
+//            [line mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.top.and.left.and.right.mas_equalTo(0);
+//                make.height.mas_equalTo(1);
+//            }];
+//        }];
+//        [self makeConstraints];
+//    }
+//    return self;
+//}
+//
+//- (void)doAction
+//{
+//    [self.viewController showLoginAlert];
+//}
+//
+//- (void)clearTextView
+//{
+//    self.sendButton.enabled = YES;
+//    _numbleLabel.hidden = YES;
+//    [self textViewScrollHeightDidChange:self.textView scrollHeight:0.0];
+//    self.textView.text.string = nil;
+//    self.textView.text.selectedRange = NSMakeRange(NSNotFound, 0);
+//    self.textView.text.markedRange = NSMakeRange(NSNotFound, 0);
+//    [self.textView insertString:nil];
+//}
+//
+//- (void)makeConstraints
+//{
+//    [_headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(10);
+//        make.width.and.height.mas_equalTo(33);
+//        make.bottom.mas_equalTo(-8);
+//    }];
+//    
+//    [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(8);
+//        make.left.mas_equalTo(_headImageView.mas_right).with.offset(10);
+//        make.bottom.mas_equalTo(-8);
+//        make.right.mas_equalTo(_sendButton.mas_left).with.offset(-5);
+//    }];
+//    
+//    [_unloginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(8);
+//        make.left.mas_equalTo(_headImageView.mas_right).with.offset(10);
+//        make.bottom.mas_equalTo(-8);
+//        make.right.mas_equalTo(_sendButton.mas_left).with.offset(-5);
+//    }];
+//    
+//    [_sendButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-10);
+//        make.width.mas_equalTo(60);
+//        make.height.mas_equalTo(33);
+//        make.bottom.mas_equalTo(-8);
+//    }];
+//    
+//    [_numbleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.mas_equalTo(-10);
+//        make.width.mas_equalTo(60);
+//        make.height.mas_equalTo(20);
+//        make.bottom.mas_equalTo(_sendButton.mas_top).with.offset(-2);
+//    }];
+//}
+//
+//#pragma mark - delegate
+//
+//- (void)textViewDidChange:(FuTextView *)textView
+//{
+//    if (_allowInputMax != -1 && textView.text.attributedString.length > _allowInputMax)
+//    {
+//        NSRange range = NSMakeRange(_allowInputMax, textView.text.attributedString.length-_allowInputMax);
+//        textView.text.eventColor = [UIColor colorWithString:@"#b2b2b2"];
+//        textView.text.eventFont  = textView.text.font;
+//        textView.text.eventRange = range;
+//    } else
+//    {
+//        textView.text.eventColor = nil;
+//        textView.text.eventFont  = nil;
+//        textView.text.eventRange = NSMakeRange(0, 0);
+//    }
+//    NSInteger lastCount    = _allowInputMax - self.text.length;
+//    _numbleLabel.textColor = (lastCount >= 0 ? [UIColor colorWithString:@"#B6B6B6"] : [UIColor colorWithString:@"#FF6464"]);
+//    _numbleLabel.text      = @(lastCount).stringValue;
+//    _numbleLabel.hidden = lastCount > 10;
+//    _sendButton.enabled = YES;//self.text.length > 0;
+//    [super textViewDidChange:textView];
+//}
+//
+//- (void)textViewScrollHeightDidChange:(FuTextView *)textView scrollHeight:(float)scrollHeight
+//{
+//    if ([self.delegate respondsToSelector:@selector(textViewHeightDidChange:changeHeight:)]) {
+//        [self.delegate textViewHeightDidChange:self changeHeight:@(scrollHeight)];
+//    }
+//    float lineHeight = [textView getLineHeightFromLine:0 toLine:3] + textView.edgeInsets.top + textView.edgeInsets.bottom + 16;
+//    float height = scrollHeight + 16;
+//    if (height > lineHeight) height = lineHeight;
+//    if (height <= 49.0) height = 49.0;
+//    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height);
+//    }];
+////    [self setNeedsUpdateConstraints];
+////    [self updateConstraintsIfNeeded];
+////    [UIView animateWithDuration:0.25 animations:^{
+////        [self layoutIfNeeded];
+////    }];
+//}
+
+@end

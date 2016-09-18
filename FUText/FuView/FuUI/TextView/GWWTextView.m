@@ -1,0 +1,395 @@
+//
+//  GWWTextView.m
+//  GroupWenWen
+//
+//  Created by javalong on 16/4/7.
+//  Copyright © 2016年 evan. All rights reserved.
+//
+
+#import "GWWTextView.h"
+#import "FuTextView.h"
+
+#import "TWFaceGridView.h"
+
+@interface GWWTextView ()
+
+@property (nonatomic) BOOL faceIsFirstResponser; // 表情是否是第一响应值
+
+@end
+
+@implementation GWWTextView
+
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        _canEditAttachments = YES;
+        _animationDuration  = 0.25;
+        _animationCurve     = 7;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        
+        _textView = [[FuTextView alloc] initWithFrame:self.bounds];
+        _textView.text.textType = FuText_normal;
+        _textView.delegate = self;
+        _textView.backgroundColor = [UIColor clearColor];
+        _textView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        _textView.scrollTop = NO;
+        [self addSubview:_textView];
+        
+        self.showSystem = YES;
+        self.showTriggerString = YES;
+    }
+    return self;
+}
+
+- (void)setText:(NSString *)text
+{
+    _textView.text.string = nil;
+    _textView.text.selectedRange = NSMakeRange(NSNotFound, 0);
+    _textView.text.markedRange   = NSMakeRange(NSNotFound, 0);
+    [_textView insertString:text];
+}
+
+- (NSString *)text
+{
+    return [_textView.text getReallyString];
+}
+
+- (void)setPlaceHolder:(NSString *)placeHolder
+{
+    _textView.placeHolder.string = placeHolder;
+}
+
+- (void)deleteBackward                                                      // 删除输入
+{
+    [_textView deleteBackward];
+}
+
+//插入当前触发器字符
+- (void)insertTriggerString
+{
+    if (_showTriggerString)
+    {
+        [_textView insertTriggerString];
+    }
+}
+
+- (void)insertAtWithName:(NSString *)name uid:(NSString *)uid               // 插入@
+{
+    NSString *uidStr = @"";
+    if ([uid isKindOfClass:[NSString class]])
+    {
+        uidStr = uid;
+    }
+    else if ([uid isKindOfClass:[NSNumber class]])
+    {
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        uidStr = [numberFormatter stringFromNumber:(NSNumber *)uid];
+    }
+    
+    [_textView insertAtWithName:name uid:uidStr];
+}
+
+- (void)insertTopicWithName:(NSString *)name topicId:(NSString *)topicId    // 插入话题
+{
+    [_textView insertTopicWithName:name topicId:topicId];
+}
+
+- (void)insertAttachmenWithPath:(NSString *)path size:(CGSize)size          // 插入表情
+{
+    [_textView insertFaceWithName:path size:size];
+}
+
+- (void)layoutSubviews
+{
+    _textView.toolManager.caretView.backgroundColor = [UIColor blueColor];
+    
+    if (!_showInputView)
+    {
+        self.showInputView = self.superview;
+    }
+    
+    CGRect frame     = _inputView.frame;
+    frame.origin.y   = _showInputView.frame.size.height - _inputView.frame.size.height;
+    frame.size.width = _showInputView.frame.size.width;
+    if (_inputView && !CGRectEqualToRect(_inputView.frame, frame))
+    {
+        _inputView.frame = frame;
+    }
+    
+    frame = _inputAccessoryView.frame;
+    frame.size.width = _showInputView.frame.size.width;
+    if (self.isEditing)
+    {
+        frame.origin.y = _showInputView.frame.size.height - (_keyboardRect.size.height + _inputAccessoryView.frame.size.height);
+    } else
+    {
+        frame.origin.y = _showInputView.frame.size.height - (_inputAccessoryView.frame.size.height);
+    }
+    if (_inputAccessoryView.frame.origin.y <= 0) {
+        _inputAccessoryView.frame = frame;
+    } else if (!CGRectEqualToRect(_inputAccessoryView.frame, frame))
+    {
+        [UIView beginAnimations:@"InputAccessoryView" context:nil];
+        [UIView setAnimationDuration:_animationDuration];
+        [UIView setAnimationCurve:_animationCurve];
+        _inputAccessoryView.frame = frame;
+        [UIView commitAnimations];
+    }
+    
+    if (_inputView && (!_inputView.superview || _inputView.superview != _showInputView))
+    {
+        [_showInputView addSubview:_inputView];
+        [self faceResignFirstResponderWithAnimationed:NO postNotifation:NO];
+    }
+    if (!_inputAccessoryView.superview || _inputAccessoryView.superview != _showInputView)
+    {
+        [_showInputView addSubview:_inputAccessoryView];
+    }
+    [super layoutSubviews];
+}
+
+#pragma mark - FuTextViewDelegate
+
+- (void)textViewDidChange:(FuTextView *)textView
+{
+    if ([self.delegate respondsToSelector:@selector(textViewDidChange:)]) {
+        [self.delegate textViewDidChange:self];
+    }
+}
+
+- (void)textViewDidTouch:(FuTextView *)textView touch:(UITouch *)touch
+{
+    [self showSystemKeyBoard];
+    [self setNeedsLayout];
+    [self.textView setNeedsLayout];
+    [self.superview setNeedsLayout];
+}
+
+- (void)textViewWillBeginDragging:(FuTextView *)textView
+{
+}
+
+#pragma mark - 键盘通知
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    _animationDuration  = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    _animationCurve     = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    _keyboardRect       = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    [self setNeedsLayout];
+    [self.showInputView setNeedsLayout];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    _animationDuration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    _animationCurve    = [[notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    _keyboardRect      = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    [self setNeedsLayout];
+    [self.showInputView setNeedsLayout];
+}
+
+
+#pragma mark - 表情键盘代理
+
+- (void)faceGridViewDidInputFace:(NSString *)face
+{
+    [_textView insertFaceWithName:face size:CGSizeMake(_textView.text.font.pointSize, _textView.text.font.pointSize)];
+}
+
+- (void)faceGridViewDidDelete
+{
+    [_textView deleteBackward];
+}
+
+- (void)faceGridViewDidSend
+{
+    
+}
+
+- (void)dealloc
+{
+    [_inputView removeFromSuperview];
+    _inputView = nil;
+    [_inputAccessoryView removeFromSuperview];
+    _inputAccessoryView = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - 切换键盘
+
+- (void)switchKeyBoard
+{
+    if (self.showAttachmen) {
+        [self showSystemKeyBoard];
+    } else {
+        [self showAttachmentKeyBoard];
+    }
+}
+
+- (void)showSystemKeyBoard
+{
+    self.showSystem = YES;
+    [self becomeFirstResponder];
+}
+
+- (void)showAttachmentKeyBoard
+{
+    self.showAttachmen = YES;
+    [self becomeFirstResponder];
+}
+
+#pragma mark - 表情键盘视图
+
+- (void)faceBecomeFirstResponderWithAnimationed:(BOOL)animationed postNotifation:(BOOL)postNotifation
+{
+    _faceIsFirstResponser = YES;
+    if (postNotifation) [self postKeyBoardNotificationWithShow:YES]; // 键盘通知
+    if (animationed) {
+        [UIView beginAnimations:@"InputView" context:nil];
+        [UIView setAnimationDuration:_animationDuration];
+        [UIView setAnimationCurve:_animationCurve];
+        _inputView.transform = CGAffineTransformMakeTranslation(0.0, 0.0);
+        [UIView commitAnimations];
+    } else {
+        _inputView.transform = CGAffineTransformMakeTranslation(0.0, 0.0);
+    }
+}
+
+- (void)faceResignFirstResponderWithAnimationed:(BOOL)animationed postNotifation:(BOOL)postNotifation
+{
+    _faceIsFirstResponser = NO;
+    if (postNotifation) [self postKeyBoardNotificationWithShow:NO]; // 键盘通知
+    if (animationed) {
+        [UIView beginAnimations:@"InputView" context:nil];
+        [UIView setAnimationDuration:_animationDuration];
+        [UIView setAnimationCurve:_animationCurve];
+        _inputView.transform = CGAffineTransformMakeTranslation(0.0, _inputView.frame.size.height);
+        [UIView commitAnimations];
+    } else {
+        _inputView.transform = CGAffineTransformMakeTranslation(0.0, _inputView.frame.size.height);
+    }
+}
+
+#pragma mark - 键盘通知
+
+- (void)postKeyBoardNotificationWithShow:(BOOL)show
+{
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    [userInfo setObject:[NSNumber numberWithDouble:_animationDuration] forKey:UIKeyboardAnimationDurationUserInfoKey];
+    [userInfo setObject:[NSValue valueWithCGRect:_inputView.bounds]    forKey:UIKeyboardFrameEndUserInfoKey];
+    [userInfo setObject:[NSNumber numberWithInteger:_animationCurve]       forKey:UIKeyboardAnimationCurveUserInfoKey];
+    NSString *name = show ? UIKeyboardWillShowNotification : UIKeyboardWillHideNotification;
+    [[NSNotificationCenter defaultCenter] postNotificationName:name object:nil userInfo:userInfo];
+}
+
+#pragma mark - 属性
+
+- (void)setShowSystem:(BOOL)showSystem
+{
+    _showSystem = showSystem;
+    if (showSystem) _showAttachmen = NO;
+}
+
+- (void)setShowAttachmen:(BOOL)showAttachmen
+{
+    _showAttachmen = showAttachmen;
+    if (showAttachmen) _showSystem = NO;
+}
+
+- (void)setEditable:(BOOL)editable
+{
+    _textView.editable = editable;
+}
+
+- (BOOL)editable
+{
+    return _textView.editable;
+}
+
+- (BOOL)isEditing
+{
+    return _textView.isEditing;
+}
+
+- (BOOL)becomeFirstResponder
+{
+    if (!self.editable) return NO; // 不能编辑
+    // 不这样写，直接创建本视图对象，调用becomeFirstResponder函数，键盘不弹出。
+    [self performSelector:@selector(becomeAction) withObject:nil afterDelay:0.0];
+    
+    return NO;
+}
+
+- (BOOL)becomeAction
+{
+    if (!self.editable) return NO; // 不能编辑
+    
+    [self dealDefaultShow];
+    
+    BOOL value = YES;
+    if (_showSystem) {
+        [self faceResignFirstResponderWithAnimationed:YES postNotifation:NO];
+        value = [_textView becomeFirstResponder];
+    } else if (_showAttachmen) {
+        // 得到焦点，因为需要表情，则设置可以编辑附件，保证以下操作，不会失去焦点
+        _textView.canEditAttachments = _canEditAttachments;
+        [_textView resignFirstResponder];
+        [self faceBecomeFirstResponderWithAnimationed:YES postNotifation:YES];
+    }
+//    [_textView insertString:@"。"];
+//    [_textView deleteBackward];
+    return value;
+}
+
+- (BOOL)resignFirstResponder
+{
+    if (!self.editable) return NO;
+    
+    // 失去焦点，则设置不可以编辑附件，保证以下操作，可以失去焦点
+    _textView.canEditAttachments = NO;
+    
+    BOOL value = YES;
+    if (_showSystem) {
+        _showSystem = NO;
+        value = [_textView resignFirstResponder];
+    } else if (_showAttachmen) {
+        _showAttachmen = NO;
+        [_textView resignFirstResponder];
+        [self faceResignFirstResponderWithAnimationed:YES postNotifation:YES];
+    }
+    return value;
+}
+
+- (BOOL)isFirstResponder
+{
+    if (!self.editable) return NO;
+    
+    BOOL value = NO;
+    if (_showSystem) {
+        value = [_textView isFirstResponder];
+    } else if (_showAttachmen) {
+        value = _faceIsFirstResponser;
+    }
+    return value;
+}
+
+
+#pragma mark - 默认显示文本输入
+
+- (void)dealDefaultShow
+{
+    if (!_showAttachmen && !_showSystem) {
+        _showSystem = YES;
+    } else if (_showAttachmen && _showSystem) {
+        _showSystem = YES;
+    }
+}
+
+
+@end
+

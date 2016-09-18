@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<filter filterID="LOOKUP_AMATORKA" name="LookupFilter" filterType="LOOKUP_AMATORKA" percentage="50" >
+ <attachment file="lookup_amatorka.png"/>
+</filter>

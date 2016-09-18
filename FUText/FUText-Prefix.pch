@@ -1,0 +1,22 @@
+//
+//  FUText_Prefix_pch
+//  FUText
+//
+//  Created by javalong on 16/4/28.
+//  Copyright © 2016年 javalong. All rights reserved.
+//
+
+#ifndef FUText_Prefix_pch
+#define FUText_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* FUText_Prefix_pch */
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#include "avformat.h"
+#import "KxLogger.h"
+#endif

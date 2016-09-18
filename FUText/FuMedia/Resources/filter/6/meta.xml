@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<filter filterID="TONE_CURVE" name="美白" filterType="TONE_CURVE" percentage="50">
+	<attachment/>
+</filter>

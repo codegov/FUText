@@ -1,0 +1,40 @@
+//
+//  GWWEditButton.m
+//  GroupWenWen
+//
+//  Created by javalong on 16/5/5.
+//  Copyright © 2016年 evan. All rights reserved.
+//
+
+#import "GWWEditButton.h"
+
+@implementation GWWEditButton
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        _editImageView = [[GWWImageView alloc] init];
+        _editImageView.contentMode = UIViewContentModeScaleAspectFill;
+        [self addSubview:_editImageView];
+        self.clipsToBounds = YES;
+        
+        _closeButton = [[UIButton alloc] init];
+        [self addSubview:_closeButton];
+        
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+    return self;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    _editImageView.frame = self.bounds;
+}
+
+
+
+@end

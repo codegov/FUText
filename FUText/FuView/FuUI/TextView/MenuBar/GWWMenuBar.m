@@ -1,0 +1,123 @@
+//
+//  GWWQuestionMenuBar.m
+//  GroupWenWen
+//
+//  Created by javalong on 16/4/11.
+//  Copyright © 2016年 evan. All rights reserved.
+//
+
+#import "GWWMenuBar.h"
+
+@implementation GWWMenuBar
+{
+    UIToolbar *_tool;
+}
+
+- (void)showAlubmController
+{
+    if ([_delegate respondsToSelector:@selector(menuBarDidSelectedType:menuBar:)])
+    {
+        [_delegate menuBarDidSelectedType:GWWMenuBarTypeWithAlbum menuBar:self];
+    }
+}
+
+- (void)showCamearController
+{
+    if ([_delegate respondsToSelector:@selector(menuBarDidSelectedType:menuBar:)])
+    {
+        [_delegate menuBarDidSelectedType:GWWMenuBarTypeWithCamera menuBar:self];
+    }
+}
+
+- (void)showArrowAction
+{
+    if ([_delegate respondsToSelector:@selector(menuBarDidSelectedType:menuBar:)])
+    {
+        [_delegate menuBarDidSelectedType:GWWMenuBarTypeWithArrow menuBar:self];
+    }
+}
+
+- (void)setDelegate:(id<GWWMenuBarDelegate>)delegate
+{
+    _delegate = delegate;
+
+    GWWMenuBarType type = 0;
+    if ([_delegate respondsToSelector:@selector(menuBarNeedShowOfTypeWihtMenuBar:)])
+    {
+        type = [_delegate menuBarNeedShowOfTypeWihtMenuBar:self];
+    }
+    NSMutableArray *itemList  = [[NSMutableArray alloc] init];
+    if (type & GWWMenuBarTypeWithAlbum)
+    {
+        UIImage *nImage =[UIImage imageNamed:@"questionTextViewAlbumNormal"];
+        UIButton *button = [[UIButton alloc] init];
+        button.frame = CGRectMake(0, 0, nImage.size.width, nImage.size.height);
+        [button setImage:nImage forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(showAlubmController) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+        [itemList addObject:item];
+        
+        UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+        flexible.width = 50.0;
+        [itemList addObject:flexible];
+    }
+    if (type & GWWMenuBarTypeWithCamera)
+    {
+        UIImage *nImage =[UIImage imageNamed:@"questionTextViewCameraNormal"];
+//        nImage = [nImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        UIButton *button = [[UIButton alloc] init];
+        button.frame = CGRectMake(0, 0, nImage.size.width, nImage.size.height);
+        [button setImage:nImage forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(showCamearController) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:button];
+        [itemList addObject:item];
+        
+        UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        [itemList addObject:flexible];
+    }
+    if (type & GWWMenuBarTypeWithFlexibleSpace)
+    {
+        UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        [itemList addObject:flexible];
+    }
+    if (type & GWWMenuBarTypeWithArrow)
+    {
+//        [imageList addObject:@{@"n": @"questionTextViewBoardArrow",
+//                               @"h": @"",
+//                               @"type": @"s",
+//                               @"action": NSStringFromSelector(@selector(showArrowAction))}];
+    }
+    if (type & GWWMenuBarTypeWithSize)
+    {
+        _sizeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 100, 42)];
+        _sizeLabel.backgroundColor = [UIColor clearColor];
+        _sizeLabel.textAlignment = NSTextAlignmentRight;
+        _sizeLabel.font = [UIFont systemFontOfSize:15.0f];
+        
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:_sizeLabel];
+        [itemList addObject:item];
+    }
+    
+    if (!_tool) {
+        _tool = [[UIToolbar alloc] initWithFrame:self.bounds];
+        _tool.barStyle = UIBarStyleBlackTranslucent;
+        [self addSubview:_tool];
+        
+        CGSize tsize = _tool.bounds.size;
+        UIView *line = [[UIView alloc] init];
+        line.backgroundColor = [UIColor grayColor];
+        line.frame = CGRectMake(0, tsize.height - 1, tsize.width, 1);
+        [_tool addSubview:line];
+    }
+    _tool.items = itemList;
+    if ([_tool respondsToSelector:@selector(setBarTintColor:)])
+    {
+        _tool.barTintColor = [UIColor colorWithWhite:1 alpha:0.9];
+    } else
+    {
+        _tool.tintColor = [UIColor colorWithWhite:1 alpha:0.9];
+    }
+}
+
+@end
