@@ -1,21 +1,19 @@
 //
-//  ProcessBar.m
-//  SBVideoCaptureDemo
+//  FUProcessBar.m
+//  FUText
 //
 //  Created by Pandara on 14-8-13.
 //  Copyright (c) 2014年 Pandara. All rights reserved.
 //
 
-#import "ProgressBar.h"
-//#import "SBCaptureToolKit.h"
-//#import "SBCaptureToolKit.h"
+#import "FUProgressBar.h"
 
 #define color(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 
-#define BAR_H 5
-#define BAR_MARGIN 2
+#define BAR_H 2//5
+#define BAR_MARGIN 0//2
 
-#define BAR_BLUE_COLOR color(68, 214, 254, 1)
+#define BAR_BLUE_COLOR color(251, 114, 54, 1)
 #define BAR_RED_COLOR color(224, 66, 39, 1)
 #define BAR_BG_COLOR color(38, 38, 38, 1)
 
@@ -28,23 +26,20 @@
 
 #define TIMER_INTERVAL 1.0f
 
-@interface ProgressBar ()
+@interface FUProgressBar ()
 
 @property (strong, nonatomic) NSMutableArray *progressViewArray;
-
-@property (strong, nonatomic) UIView *barView;
-@property (strong, nonatomic) UIImageView *progressIndicator;
-
 @property (strong, nonatomic) NSTimer *shiningTimer;
 
 @end
 
-@implementation ProgressBar
+@implementation FUProgressBar
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         [self initalize];
     }
     return self;
@@ -56,27 +51,27 @@
     self.backgroundColor = BG_COLOR;
     self.progressViewArray = [[NSMutableArray alloc] init];
     
-    //barView
-    self.barView = [[UIView alloc] initWithFrame:CGRectMake(0, BAR_MARGIN, self.frame.size.width, BAR_H)];
-    _barView.backgroundColor = BAR_BG_COLOR;
-    [self addSubview:_barView];
+    //progressView
+    _progressView = [[UIView alloc] initWithFrame:CGRectMake(0, BAR_MARGIN, self.frame.size.width, BAR_H)];
+    _progressView.backgroundColor = BAR_BG_COLOR;
+    [self addSubview:_progressView];
     
     //最短分割线
-    UIView *intervalView = [[UIView alloc] initWithFrame:CGRectMake(BAR_MIN_W, 0, 1, BAR_H)];
-    intervalView.backgroundColor = [UIColor blackColor];
-    [_barView addSubview:intervalView];
+//    _intervalView = [[UIView alloc] initWithFrame:CGRectMake(BAR_MIN_W, 0, 1, BAR_H)];
+//    _intervalView.backgroundColor = [UIColor blackColor];
+//    [_progressView addSubview:_intervalView];
     
     //indicator
-    self.progressIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, INDICATOR_W, INDICATOR_H)];
-    _progressIndicator.backgroundColor = [UIColor clearColor];
-    _progressIndicator.image = [UIImage imageNamed:@"record_progressbar_front.png"];
-    _progressIndicator.center = CGPointMake(0, self.frame.size.height / 2);
-    [self addSubview:_progressIndicator];
+//    _progressIndicator = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, INDICATOR_W, INDICATOR_H)];
+//    _progressIndicator.backgroundColor = [UIColor clearColor];
+//    _progressIndicator.image = [UIImage imageNamed:@"Fu_Record_Progressbar_Front"];
+//    _progressIndicator.center = CGPointMake(0, self.frame.size.height / 2);
+//    [self addSubview:_progressIndicator];
 }
 
 - (UIView *)getProgressView
 {
-    UIView *progressView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, BAR_H)];
+    UIView *progressView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, BAR_H)];
     progressView.backgroundColor = BAR_BLUE_COLOR;
     progressView.autoresizesSubviews = YES;
     
@@ -136,7 +131,7 @@
     frame.origin.x = newProgressX;
     newProgressView.frame = frame;
 
-    [_barView addSubview:newProgressView];
+    [_progressView addSubview:newProgressView];
     
     [_progressViewArray addObject:newProgressView];
 }
@@ -194,34 +189,10 @@
     [self refreshIndicatorPosition];
 }
 
-+ (ProgressBar *)getInstance
++ (FUProgressBar *)getInstance
 {
-    ProgressBar *progressBar = [[ProgressBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, BAR_H + BAR_MARGIN * 2)];
+    FUProgressBar *progressBar = [[FUProgressBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, BAR_H + BAR_MARGIN * 2)];
     return progressBar;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

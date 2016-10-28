@@ -1,5 +1,5 @@
 //
-//  FuCameraView.m
+//  FUCameraView.m
 //  FUText
 //
 //  Created by javalong on 16/5/3.
@@ -8,9 +8,9 @@
 
 @import AVFoundation;
 
-#import "FuCameraView.h"
+#import "FUCameraView.h"
 
-@implementation FuCameraView
+@implementation FUCameraView
 
 + (Class)layerClass
 {

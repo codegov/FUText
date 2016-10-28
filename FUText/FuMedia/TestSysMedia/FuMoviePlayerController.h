@@ -11,6 +11,5 @@
 @interface FuMoviePlayerController : UIViewController
 
 @property (nonatomic, strong) NSURL *url;
-@property (nonatomic) CGSize renderSize;
 
 @end

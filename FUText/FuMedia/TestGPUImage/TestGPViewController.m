@@ -12,7 +12,7 @@
 #import "FuMoviePlayerController.h"
 #import "TestGPPlayViewController.h"
 
-#import "ProgressBar.h"
+#import "FUProgressBar.h"
 #import "DeleteButton.h"
 
 @interface TestGPViewController ()<GPUImageVideoCameraDelegate>
@@ -37,7 +37,7 @@
     
     UIButton *_recordButton;
     UIButton *_nextButton;
-    ProgressBar  *_progressBar;
+    FUProgressBar  *_progressBar;
     DeleteButton *_deleteButton;
     
     GPUImageView *previewView;
@@ -78,7 +78,7 @@
     bottomView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.25];
     [self.view addSubview:bottomView];
     
-    _progressBar = [ProgressBar getInstance];
+    _progressBar = [FUProgressBar getInstance];
     CGRect frame = _progressBar.frame;
     frame.origin.y = y;
     _progressBar.frame = frame;

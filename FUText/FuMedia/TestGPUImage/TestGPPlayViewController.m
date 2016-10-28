@@ -125,9 +125,11 @@
     // 滤镜
     // filter = [[GPUImagePixellateFilter alloc] init];
     // filter = [[GPUImageUnsharpMaskFilter alloc] init];
-    filter = [[GPUImageSepiaFilter alloc] init];
-    [filter addTarget:previewView];
-    [movieFile addTarget:filter];
+//    filter = [[GPUImageSepiaFilter alloc] init];
+//    [filter addTarget:previewView];
+//    [movieFile addTarget:filter];
+    
+    [movieFile addTarget:previewView];
     
     // 输出
 //    NSString *pathToMovie = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/PlayMovie.m4v"];

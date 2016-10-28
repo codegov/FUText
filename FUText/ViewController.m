@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "FuTextView.h"
-#import "FuCameraViewController.h"
+#import "FUCameraViewController.h"
 #import "TestMediaViewController.h"
 #import "TestGPViewController.h"
 
@@ -76,7 +76,7 @@
 
 - (void)addSystemAction
 {
-    FuCameraViewController *cc = [[FuCameraViewController alloc] init];
+    FUCameraViewController *cc = [[FUCameraViewController alloc] init];
     [self.navigationController pushViewController:cc animated:YES];
 }
 
@@ -85,8 +85,8 @@
 
 - (void)test
 {
-    NSString *text = @"fsdfdsf<img src=q2 dsdss src=\"q\"/>";// @"<p>Image 1:<img width=\"199\" src=\"_image/12/label\" alt=\"\"/> Image 2: <img width=\"199\" src=\"_image/12/label\" alt=\"\"/><img width=\"199\" src=\"_image/12/label\" alt=\"\"/></p>";
-    NSString *regString = @"<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>";
+    NSString *text = @"<video src=\"http://www.baidu.com\"><p>Image 1:<video width=\"199\" src=\"_image/12/label\" alt=\"\"/> Image 2: <video width=\"199\" src=\"_image/12/label\" alt=\"\"/><video width=\"199\" src=\"_image/12/label\" alt=\"\"/></p>";// @"fsdfdsf<img src=\"q\" type=1/>";//@"fsdfdsf<img src=q2 dsdss src=\"q\"/>";//
+    NSString *regString = @"<video[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>";//@"<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>";
     
 //    NSString *text = @"wewewwehttp://p.qpic.cn/wenwenpic/0/20160527145844-1440352223//10 fsdfsd";//@"http://pic.wenwen.soso.com/p/20160606/20160606101202-2129340660.jpgd";
 //    NSString *regString = @"http://p.qpic.cn/wenwenpic/0/([\\d]+-[\\d]+)(/[\\d]+)?";//@"http://pic.wenwen.soso.com/p/\\d{8}/(\\d{1,}-\\d{1,}).jpg";

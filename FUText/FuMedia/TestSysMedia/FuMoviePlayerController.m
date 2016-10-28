@@ -28,7 +28,7 @@
     
     [_player setScalingMode:MPMovieScalingModeAspectFill];
     [_player setControlStyle:MPMovieControlStyleEmbedded];
-    [_player.view setFrame:CGRectMake(0, 0, _renderSize.width, _renderSize.height)];
+    [_player.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 216)];
     [self.view addSubview:_player.view];
     
     [_player prepareToPlay];

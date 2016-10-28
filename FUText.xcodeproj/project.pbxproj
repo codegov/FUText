@@ -24,14 +24,27 @@
 		821304381CE30D7B00ECD591 /* KxMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821304311CE30D7B00ECD591 /* KxMovieViewController.m */; };
 		821304391CE30D7B00ECD591 /* TestMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821304331CE30D7B00ECD591 /* TestMediaViewController.m */; };
 		8213043B1CE3127E00ECD591 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8213043A1CE3127E00ECD591 /* VideoToolbox.framework */; };
-		821452F91D89605700BB8956 /* FuCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F01D89605600BB8956 /* FuCameraView.m */; };
-		821452FA1D89605700BB8956 /* FuCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F21D89605600BB8956 /* FuCameraViewController.m */; };
+		821452F91D89605700BB8956 /* FUCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F01D89605600BB8956 /* FUCameraView.m */; };
+		821452FA1D89605700BB8956 /* FUCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F21D89605600BB8956 /* FUCameraViewController.m */; };
 		821452FB1D89605700BB8956 /* FuMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F41D89605600BB8956 /* FuMoviePlayerController.m */; };
 		821452FC1D89605700BB8956 /* GWWFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F61D89605700BB8956 /* GWWFileManager.m */; };
 		821452FD1D89605700BB8956 /* NSString+GWWString.m in Sources */ = {isa = PBXBuildFile; fileRef = 821452F81D89605700BB8956 /* NSString+GWWString.m */; };
 		821B528E1D0164CF0012E913 /* GPUImageMovieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 821B528D1D0164CF0012E913 /* GPUImageMovieEx.m */; };
-		822E0EEE1D38876300FB109C /* record_progressbar_front.png in Resources */ = {isa = PBXBuildFile; fileRef = 822E0EEC1D38876300FB109C /* record_progressbar_front.png */; };
-		822E0EEF1D38876300FB109C /* record_progressbar_front@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 822E0EED1D38876300FB109C /* record_progressbar_front@2x.png */; };
+		822E0EEE1D38876300FB109C /* Fu_Record_Progressbar_Front.png in Resources */ = {isa = PBXBuildFile; fileRef = 822E0EEC1D38876300FB109C /* Fu_Record_Progressbar_Front.png */; };
+		822E0EEF1D38876300FB109C /* Fu_Record_Progressbar_Front@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 822E0EED1D38876300FB109C /* Fu_Record_Progressbar_Front@2x.png */; };
+		827EF8291DB9C2960003C2C7 /* FUCameraExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 827EF8281DB9C2960003C2C7 /* FUCameraExport.m */; };
+		829B90161DBDEBEF001738D8 /* FUCameraRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 829B90151DBDEBEF001738D8 /* FUCameraRecordView.m */; };
+		829B90211DBE0911001738D8 /* FUCameraCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 829B90201DBE0911001738D8 /* FUCameraCapture.m */; };
+		829B90311DC07DD0001738D8 /* FU_Camera_Export_Progress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B90281DC07DD0001738D8 /* FU_Camera_Export_Progress@2x.png */; };
+		829B90321DC07DD0001738D8 /* FU_Camera_Navi_R@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B90291DC07DD0001738D8 /* FU_Camera_Navi_R@2x.png */; };
+		829B90331DC07DD0001738D8 /* FU_Camera_Ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B902A1DC07DD0001738D8 /* FU_Camera_Ok@2x.png */; };
+		829B90341DC07DD0001738D8 /* FU_Camera_Play_Hli@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B902B1DC07DD0001738D8 /* FU_Camera_Play_Hli@2x.png */; };
+		829B90351DC07DD0001738D8 /* FU_Camera_Play_Nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B902C1DC07DD0001738D8 /* FU_Camera_Play_Nor@2x.png */; };
+		829B90361DC07DD0001738D8 /* FU_Camera_Record_Nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B902D1DC07DD0001738D8 /* FU_Camera_Record_Nor@2x.png */; };
+		829B90371DC07DD0001738D8 /* FU_Camera_Record_Hli@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B902E1DC07DD0001738D8 /* FU_Camera_Record_Hli@2x.png */; };
+		829B90381DC07DD0001738D8 /* FU_Camera_Cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B902F1DC07DD0001738D8 /* FU_Camera_Cancel@2x.png */; };
+		829B90391DC07DD0001738D8 /* FU_Camera_Tap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 829B90301DC07DD0001738D8 /* FU_Camera_Tap@2x.png */; };
+		829B903F1DC1D414001738D8 /* FUCameraPreExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 829B903E1DC1D414001738D8 /* FUCameraPreExport.m */; };
 		82AEBD061D7678DF007F1ECD /* FuDrawHighlightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AEBC2A1D7678DF007F1ECD /* FuDrawHighlightView.m */; };
 		82AEBD071D7678DF007F1ECD /* FuDrawLineLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AEBC2C1D7678DF007F1ECD /* FuDrawLineLayoutView.m */; };
 		82AEBD081D7678DF007F1ECD /* NSString+FuExtendedStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AEBC2E1D7678DF007F1ECD /* NSString+FuExtendedStringDrawing.m */; };
@@ -261,7 +274,7 @@
 		82FF78531CEC4E9200408EF2 /* GPUImageVideoCameraEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FF78511CEC4E9200408EF2 /* GPUImageVideoCameraEx.m */; };
 		82FF785A1CEC5C5D00408EF2 /* TestGPPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FF78591CEC5C5D00408EF2 /* TestGPPlayViewController.m */; };
 		82FF787E1CEC7E3B00408EF2 /* DeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FF787A1CEC7E3B00408EF2 /* DeleteButton.m */; };
-		82FF787F1CEC7E3B00408EF2 /* ProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FF787D1CEC7E3B00408EF2 /* ProgressBar.m */; };
+		82FF787F1CEC7E3B00408EF2 /* FUProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FF787D1CEC7E3B00408EF2 /* FUProgressBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,10 +436,10 @@
 		821304321CE30D7B00ECD591 /* TestMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMediaViewController.h; sourceTree = "<group>"; };
 		821304331CE30D7B00ECD591 /* TestMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMediaViewController.m; sourceTree = "<group>"; };
 		8213043A1CE3127E00ECD591 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		821452EF1D89605600BB8956 /* FuCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuCameraView.h; sourceTree = "<group>"; };
-		821452F01D89605600BB8956 /* FuCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuCameraView.m; sourceTree = "<group>"; };
-		821452F11D89605600BB8956 /* FuCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuCameraViewController.h; sourceTree = "<group>"; };
-		821452F21D89605600BB8956 /* FuCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuCameraViewController.m; sourceTree = "<group>"; };
+		821452EF1D89605600BB8956 /* FUCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCameraView.h; sourceTree = "<group>"; };
+		821452F01D89605600BB8956 /* FUCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCameraView.m; sourceTree = "<group>"; };
+		821452F11D89605600BB8956 /* FUCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCameraViewController.h; sourceTree = "<group>"; };
+		821452F21D89605600BB8956 /* FUCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCameraViewController.m; sourceTree = "<group>"; };
 		821452F31D89605600BB8956 /* FuMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuMoviePlayerController.h; sourceTree = "<group>"; };
 		821452F41D89605600BB8956 /* FuMoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuMoviePlayerController.m; sourceTree = "<group>"; };
 		821452F51D89605600BB8956 /* GWWFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWWFileManager.h; sourceTree = "<group>"; };
@@ -435,8 +448,25 @@
 		821452F81D89605700BB8956 /* NSString+GWWString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GWWString.m"; sourceTree = "<group>"; };
 		821B528C1D0164CF0012E913 /* GPUImageMovieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageMovieEx.h; sourceTree = "<group>"; };
 		821B528D1D0164CF0012E913 /* GPUImageMovieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageMovieEx.m; sourceTree = "<group>"; };
-		822E0EEC1D38876300FB109C /* record_progressbar_front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_progressbar_front.png; sourceTree = "<group>"; };
-		822E0EED1D38876300FB109C /* record_progressbar_front@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record_progressbar_front@2x.png"; sourceTree = "<group>"; };
+		822E0EEC1D38876300FB109C /* Fu_Record_Progressbar_Front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fu_Record_Progressbar_Front.png; sourceTree = "<group>"; };
+		822E0EED1D38876300FB109C /* Fu_Record_Progressbar_Front@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fu_Record_Progressbar_Front@2x.png"; sourceTree = "<group>"; };
+		827EF8271DB9C2960003C2C7 /* FUCameraExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCameraExport.h; sourceTree = "<group>"; };
+		827EF8281DB9C2960003C2C7 /* FUCameraExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCameraExport.m; sourceTree = "<group>"; };
+		829B90141DBDEBEF001738D8 /* FUCameraRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCameraRecordView.h; sourceTree = "<group>"; };
+		829B90151DBDEBEF001738D8 /* FUCameraRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCameraRecordView.m; sourceTree = "<group>"; };
+		829B901F1DBE0911001738D8 /* FUCameraCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCameraCapture.h; sourceTree = "<group>"; };
+		829B90201DBE0911001738D8 /* FUCameraCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCameraCapture.m; sourceTree = "<group>"; };
+		829B90281DC07DD0001738D8 /* FU_Camera_Export_Progress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Export_Progress@2x.png"; sourceTree = "<group>"; };
+		829B90291DC07DD0001738D8 /* FU_Camera_Navi_R@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Navi_R@2x.png"; sourceTree = "<group>"; };
+		829B902A1DC07DD0001738D8 /* FU_Camera_Ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Ok@2x.png"; sourceTree = "<group>"; };
+		829B902B1DC07DD0001738D8 /* FU_Camera_Play_Hli@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Play_Hli@2x.png"; sourceTree = "<group>"; };
+		829B902C1DC07DD0001738D8 /* FU_Camera_Play_Nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Play_Nor@2x.png"; sourceTree = "<group>"; };
+		829B902D1DC07DD0001738D8 /* FU_Camera_Record_Nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Record_Nor@2x.png"; sourceTree = "<group>"; };
+		829B902E1DC07DD0001738D8 /* FU_Camera_Record_Hli@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Record_Hli@2x.png"; sourceTree = "<group>"; };
+		829B902F1DC07DD0001738D8 /* FU_Camera_Cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Cancel@2x.png"; sourceTree = "<group>"; };
+		829B90301DC07DD0001738D8 /* FU_Camera_Tap@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FU_Camera_Tap@2x.png"; sourceTree = "<group>"; };
+		829B903D1DC1D414001738D8 /* FUCameraPreExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUCameraPreExport.h; sourceTree = "<group>"; };
+		829B903E1DC1D414001738D8 /* FUCameraPreExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUCameraPreExport.m; sourceTree = "<group>"; };
 		82AEBC291D7678DF007F1ECD /* FuDrawHighlightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuDrawHighlightView.h; sourceTree = "<group>"; };
 		82AEBC2A1D7678DF007F1ECD /* FuDrawHighlightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuDrawHighlightView.m; sourceTree = "<group>"; };
 		82AEBC2B1D7678DF007F1ECD /* FuDrawLineLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuDrawLineLayoutView.h; sourceTree = "<group>"; };
@@ -713,8 +743,8 @@
 		82FF78591CEC5C5D00408EF2 /* TestGPPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestGPPlayViewController.m; sourceTree = "<group>"; };
 		82FF78791CEC7E3B00408EF2 /* DeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteButton.h; sourceTree = "<group>"; };
 		82FF787A1CEC7E3B00408EF2 /* DeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteButton.m; sourceTree = "<group>"; };
-		82FF787C1CEC7E3B00408EF2 /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
-		82FF787D1CEC7E3B00408EF2 /* ProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBar.m; sourceTree = "<group>"; };
+		82FF787C1CEC7E3B00408EF2 /* FUProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FUProgressBar.h; sourceTree = "<group>"; };
+		82FF787D1CEC7E3B00408EF2 /* FUProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FUProgressBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -964,6 +994,7 @@
 		821304251CE30D7B00ECD591 /* TestMedia */ = {
 			isa = PBXGroup;
 			children = (
+				821FB4B51DA8EE4C0027303A /* Learn */,
 				821304261CE30D7B00ECD591 /* kxmovie */,
 				821304321CE30D7B00ECD591 /* TestMediaViewController.h */,
 				821304331CE30D7B00ECD591 /* TestMediaViewController.m */,
@@ -991,12 +1022,21 @@
 		821452EE1D89605600BB8956 /* TestSysMedia */ = {
 			isa = PBXGroup;
 			children = (
-				821452EF1D89605600BB8956 /* FuCameraView.h */,
-				821452F01D89605600BB8956 /* FuCameraView.m */,
-				821452F11D89605600BB8956 /* FuCameraViewController.h */,
-				821452F21D89605600BB8956 /* FuCameraViewController.m */,
+				829B90271DC07DD0001738D8 /* Images */,
+				821452EF1D89605600BB8956 /* FUCameraView.h */,
+				821452F01D89605600BB8956 /* FUCameraView.m */,
+				829B90141DBDEBEF001738D8 /* FUCameraRecordView.h */,
+				829B90151DBDEBEF001738D8 /* FUCameraRecordView.m */,
+				821452F11D89605600BB8956 /* FUCameraViewController.h */,
+				821452F21D89605600BB8956 /* FUCameraViewController.m */,
 				821452F31D89605600BB8956 /* FuMoviePlayerController.h */,
 				821452F41D89605600BB8956 /* FuMoviePlayerController.m */,
+				827EF8271DB9C2960003C2C7 /* FUCameraExport.h */,
+				827EF8281DB9C2960003C2C7 /* FUCameraExport.m */,
+				829B903D1DC1D414001738D8 /* FUCameraPreExport.h */,
+				829B903E1DC1D414001738D8 /* FUCameraPreExport.m */,
+				829B901F1DBE0911001738D8 /* FUCameraCapture.h */,
+				829B90201DBE0911001738D8 /* FUCameraCapture.m */,
 				821452F51D89605600BB8956 /* GWWFileManager.h */,
 				821452F61D89605700BB8956 /* GWWFileManager.m */,
 				821452F71D89605700BB8956 /* NSString+GWWString.h */,
@@ -1006,11 +1046,34 @@
 			path = FUText/FuMedia/TestSysMedia;
 			sourceTree = SOURCE_ROOT;
 		};
+		821FB4B51DA8EE4C0027303A /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
 		822E0EEB1D38876300FB109C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				822E0EEC1D38876300FB109C /* record_progressbar_front.png */,
-				822E0EED1D38876300FB109C /* record_progressbar_front@2x.png */,
+				822E0EEC1D38876300FB109C /* Fu_Record_Progressbar_Front.png */,
+				822E0EED1D38876300FB109C /* Fu_Record_Progressbar_Front@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		829B90271DC07DD0001738D8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				829B90281DC07DD0001738D8 /* FU_Camera_Export_Progress@2x.png */,
+				829B90291DC07DD0001738D8 /* FU_Camera_Navi_R@2x.png */,
+				829B902A1DC07DD0001738D8 /* FU_Camera_Ok@2x.png */,
+				829B902B1DC07DD0001738D8 /* FU_Camera_Play_Hli@2x.png */,
+				829B902C1DC07DD0001738D8 /* FU_Camera_Play_Nor@2x.png */,
+				829B902D1DC07DD0001738D8 /* FU_Camera_Record_Nor@2x.png */,
+				829B902E1DC07DD0001738D8 /* FU_Camera_Record_Hli@2x.png */,
+				829B902F1DC07DD0001738D8 /* FU_Camera_Cancel@2x.png */,
+				829B90301DC07DD0001738D8 /* FU_Camera_Tap@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1453,13 +1516,13 @@
 		82FD588F1CD1DDA80077A606 /* FUText */ = {
 			isa = PBXGroup;
 			children = (
+				82FD58991CD1DDA80077A606 /* Main.storyboard */,
 				82AEBC241D7678DF007F1ECD /* FuView */,
 				821290491CD88DD90023596F /* FuMedia */,
 				82FD58931CD1DDA80077A606 /* AppDelegate.h */,
 				82FD58941CD1DDA80077A606 /* AppDelegate.m */,
 				82FD58961CD1DDA80077A606 /* ViewController.h */,
 				82FD58971CD1DDA80077A606 /* ViewController.m */,
-				82FD58991CD1DDA80077A606 /* Main.storyboard */,
 				82FD589C1CD1DDA80077A606 /* Assets.xcassets */,
 				82FD589E1CD1DDA80077A606 /* LaunchScreen.storyboard */,
 				82FD58A11CD1DDA80077A606 /* Info.plist */,
@@ -1699,8 +1762,8 @@
 			isa = PBXGroup;
 			children = (
 				822E0EEB1D38876300FB109C /* Images */,
-				82FF787C1CEC7E3B00408EF2 /* ProgressBar.h */,
-				82FF787D1CEC7E3B00408EF2 /* ProgressBar.m */,
+				82FF787C1CEC7E3B00408EF2 /* FUProgressBar.h */,
+				82FF787D1CEC7E3B00408EF2 /* FUProgressBar.m */,
 			);
 			path = ProgressBar;
 			sourceTree = "<group>";
@@ -1874,6 +1937,7 @@
 				82AEBD251D7678DF007F1ECD /* face106@2x.png in Resources */,
 				82AEBD4F1D7678DF007F1ECD /* face38@2x.png in Resources */,
 				82AEBD291D7678DF007F1ECD /* face10@2x.png in Resources */,
+				829B90361DC07DD0001738D8 /* FU_Camera_Record_Nor@2x.png in Resources */,
 				82AEBD2D1D7678DF007F1ECD /* face113@2x.png in Resources */,
 				82FF781A1CEC428B00408EF2 /* meta.xml in Resources */,
 				82AEBD631D7678DF007F1ECD /* face56@2x.png in Resources */,
@@ -1885,10 +1949,12 @@
 				82AEBD661D7678DF007F1ECD /* face59@2x.png in Resources */,
 				82FF78431CEC430F00408EF2 /* testMov2.png in Resources */,
 				82AEBDA71D7678DF007F1ECD /* questionTextViewAlbumHlight@2x.png in Resources */,
+				829B90311DC07DD0001738D8 /* FU_Camera_Export_Progress@2x.png in Resources */,
 				82AEBD811D7678DF007F1ECD /* face83@2x.png in Resources */,
 				82FF782D1CEC428B00408EF2 /* meta.xml in Resources */,
 				82AEBDAA1D7678DF007F1ECD /* questionTextViewBoardArrow@2x.png in Resources */,
 				82AEBD561D7678DF007F1ECD /* face44@2x.png in Resources */,
+				829B90341DC07DD0001738D8 /* FU_Camera_Play_Hli@2x.png in Resources */,
 				82AEBD881D7678DF007F1ECD /* face8@2x.png in Resources */,
 				82AEBD121D7678DF007F1ECD /* Image.bundle in Resources */,
 				82AEBDA01D7678DF007F1ECD /* edit_addImage_normal@2x.png in Resources */,
@@ -1933,6 +1999,7 @@
 				82AEBD1F1D7678DF007F1ECD /* face100@2x.png in Resources */,
 				82AEBD701D7678DF007F1ECD /* face68@2x.png in Resources */,
 				82AEBD8C1D7678DF007F1ECD /* face93@2x.png in Resources */,
+				829B90371DC07DD0001738D8 /* FU_Camera_Record_Hli@2x.png in Resources */,
 				82AEBD2E1D7678DF007F1ECD /* face114@2x.png in Resources */,
 				82AEBD6E1D7678DF007F1ECD /* face66@2x.png in Resources */,
 				82AEBD201D7678DF007F1ECD /* face101@2x.png in Resources */,
@@ -1949,17 +2016,20 @@
 				82AEBD911D7678DF007F1ECD /* face98@2x.png in Resources */,
 				82AEBD5D1D7678DF007F1ECD /* face50@2x.png in Resources */,
 				82AEBD941D7678DF007F1ECD /* im_input_keybo_del@2x.png in Resources */,
-				822E0EEE1D38876300FB109C /* record_progressbar_front.png in Resources */,
+				822E0EEE1D38876300FB109C /* Fu_Record_Progressbar_Front.png in Resources */,
 				82FF782C1CEC428B00408EF2 /* lookup_abao.png in Resources */,
 				82FF78191CEC428B00408EF2 /* icon.png in Resources */,
 				82AEBD6D1D7678DF007F1ECD /* face65@2x.png in Resources */,
 				82FF78271CEC428B00408EF2 /* meta.xml in Resources */,
 				82AEBD241D7678DF007F1ECD /* face105@2x.png in Resources */,
 				821304351CE30D7B00ECD591 /* kxmovie.bundle in Resources */,
+				829B90321DC07DD0001738D8 /* FU_Camera_Navi_R@2x.png in Resources */,
 				82AEBDA31D7678DF007F1ECD /* edit_selected_image_arrow_light@2x.png in Resources */,
 				82AEBD3A1D7678DF007F1ECD /* face19@2x.png in Resources */,
 				82FF78461CEC430F00408EF2 /* testMov9.png in Resources */,
 				82FF78481CEC430F00408EF2 /* rain.mp4 in Resources */,
+				829B90351DC07DD0001738D8 /* FU_Camera_Play_Nor@2x.png in Resources */,
+				829B90381DC07DD0001738D8 /* FU_Camera_Cancel@2x.png in Resources */,
 				82AEBD7C1D7678DF007F1ECD /* face79@2x.png in Resources */,
 				82AEBD4E1D7678DF007F1ECD /* face37@2x.png in Resources */,
 				82AEBD301D7678DF007F1ECD /* face116@2x.png in Resources */,
@@ -1994,13 +2064,15 @@
 				82AEBD581D7678DF007F1ECD /* face46@2x.png in Resources */,
 				82AEBD951D7678DF007F1ECD /* im_input_keybo_del@3x.png in Resources */,
 				82AEBDA21D7678DF007F1ECD /* edit_pop_normal@2x.png in Resources */,
-				822E0EEF1D38876300FB109C /* record_progressbar_front@2x.png in Resources */,
+				822E0EEF1D38876300FB109C /* Fu_Record_Progressbar_Front@2x.png in Resources */,
+				829B90331DC07DD0001738D8 /* FU_Camera_Ok@2x.png in Resources */,
 				82AEBD3B1D7678DF007F1ECD /* face1@2x.png in Resources */,
 				82AEBDA91D7678DF007F1ECD /* questionTextViewAlbumNormal@3x.png in Resources */,
 				82AEBD281D7678DF007F1ECD /* face109@2x.png in Resources */,
 				82AEBD5F1D7678DF007F1ECD /* face52@2x.png in Resources */,
 				82AEBD871D7678DF007F1ECD /* face89@2x.png in Resources */,
 				82AEBD511D7678DF007F1ECD /* face3@2x.png in Resources */,
+				829B90391DC07DD0001738D8 /* FU_Camera_Tap@2x.png in Resources */,
 				82AEBD391D7678DF007F1ECD /* face18@2x.png in Resources */,
 				82AEBD6C1D7678DF007F1ECD /* face64@2x.png in Resources */,
 				82FF78471CEC430F00408EF2 /* rain-480-480.mp4 in Resources */,
@@ -2038,6 +2110,7 @@
 				82AEBD091D7678DF007F1ECD /* FuDrawLabelView.m in Sources */,
 				821304391CE30D7B00ECD591 /* TestMediaViewController.m in Sources */,
 				82AEBD061D7678DF007F1ECD /* FuDrawHighlightView.m in Sources */,
+				827EF8291DB9C2960003C2C7 /* FUCameraExport.m in Sources */,
 				82AEBD1B1D7678DF007F1ECD /* FuTextView.m in Sources */,
 				82FF787E1CEC7E3B00408EF2 /* DeleteButton.m in Sources */,
 				821304361CE30D7B00ECD591 /* KxMovieDecoder.m in Sources */,
@@ -2045,6 +2118,7 @@
 				82AEBD1A1D7678DF007F1ECD /* FuLabel.m in Sources */,
 				82AEBD9A1D7678DF007F1ECD /* GWWEditButton.m in Sources */,
 				82AEBD191D7678DF007F1ECD /* FuTextInput.m in Sources */,
+				829B90211DBE0911001738D8 /* FUCameraCapture.m in Sources */,
 				821452FC1D89605700BB8956 /* GWWFileManager.m in Sources */,
 				82AEBD9E1D7678DF007F1ECD /* GWWTextView.m in Sources */,
 				82AEBD131D7678DF007F1ECD /* FuManager.m in Sources */,
@@ -2064,23 +2138,25 @@
 				82AEBD9C1D7678DF007F1ECD /* GWWQuestionTextView.m in Sources */,
 				821304341CE30D7B00ECD591 /* KxAudioManager.m in Sources */,
 				82AEBD991D7678DF007F1ECD /* GWWCommentTextView.m in Sources */,
+				829B903F1DC1D414001738D8 /* FUCameraPreExport.m in Sources */,
 				82AEBD971D7678DF007F1ECD /* TWFaceGridView.m in Sources */,
 				82AEBD0B1D7678DF007F1ECD /* FuDrawView.m in Sources */,
 				82FD58981CD1DDA80077A606 /* ViewController.m in Sources */,
 				82FD58951CD1DDA80077A606 /* AppDelegate.m in Sources */,
 				82AEBD9D1D7678DF007F1ECD /* GWWTextCache.m in Sources */,
 				821B528E1D0164CF0012E913 /* GPUImageMovieEx.m in Sources */,
-				821452FA1D89605700BB8956 /* FuCameraViewController.m in Sources */,
+				821452FA1D89605700BB8956 /* FUCameraViewController.m in Sources */,
 				82AEBD171D7678DF007F1ECD /* FuTextRun.m in Sources */,
-				821452F91D89605700BB8956 /* FuCameraView.m in Sources */,
+				821452F91D89605700BB8956 /* FUCameraView.m in Sources */,
 				82AEBD111D7678DF007F1ECD /* FuTextSelectedMagnifier.m in Sources */,
+				829B90161DBDEBEF001738D8 /* FUCameraRecordView.m in Sources */,
 				82AEBD081D7678DF007F1ECD /* NSString+FuExtendedStringDrawing.m in Sources */,
 				82AEBD0D1D7678DF007F1ECD /* FuTableView.m in Sources */,
 				821304381CE30D7B00ECD591 /* KxMovieViewController.m in Sources */,
 				821304371CE30D7B00ECD591 /* KxMovieGLView.m in Sources */,
 				82AEBD101D7678DF007F1ECD /* FuTextLookMagnifier.m in Sources */,
 				82FF78531CEC4E9200408EF2 /* GPUImageVideoCameraEx.m in Sources */,
-				82FF787F1CEC7E3B00408EF2 /* ProgressBar.m in Sources */,
+				82FF787F1CEC7E3B00408EF2 /* FUProgressBar.m in Sources */,
 				82AEBD141D7678DF007F1ECD /* FuLineLayout.m in Sources */,
 				821452FD1D89605700BB8956 /* NSString+GWWString.m in Sources */,
 				82FD58921CD1DDA80077A606 /* main.m in Sources */,
@@ -2235,6 +2311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5E25KMK5KR;
 				GCC_PREFIX_HEADER = "FUText/FUText-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FUText/FuMedia/FFmpeg-iOS/include",
@@ -2248,7 +2325,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FUText/FuMedia/FFmpeg-iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wenwen.FUText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wenwen.FUText1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2259,6 +2336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5E25KMK5KR;
 				GCC_PREFIX_HEADER = "FUText/FUText-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/FUText/FuMedia/FFmpeg-iOS/include",
@@ -2272,7 +2350,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FUText/FuMedia/FFmpeg-iOS/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wenwen.FUText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wenwen.FUText1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

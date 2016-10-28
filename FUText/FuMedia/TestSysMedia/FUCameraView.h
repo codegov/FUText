@@ -1,5 +1,5 @@
 //
-//  FuCameraView.h
+//  FUCameraView.h
 //  FUText
 //
 //  Created by javalong on 16/5/3.
@@ -10,7 +10,7 @@
 
 @class AVCaptureSession;
 
-@interface FuCameraView : UIView
+@interface FUCameraView : UIView
 
 @property (nonatomic) AVCaptureSession *session;
 
