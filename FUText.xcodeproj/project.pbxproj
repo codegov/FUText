@@ -1516,17 +1516,12 @@
 		82FD588F1CD1DDA80077A606 /* FUText */ = {
 			isa = PBXGroup;
 			children = (
-				82FD58991CD1DDA80077A606 /* Main.storyboard */,
 				82AEBC241D7678DF007F1ECD /* FuView */,
 				821290491CD88DD90023596F /* FuMedia */,
 				82FD58931CD1DDA80077A606 /* AppDelegate.h */,
 				82FD58941CD1DDA80077A606 /* AppDelegate.m */,
 				82FD58961CD1DDA80077A606 /* ViewController.h */,
 				82FD58971CD1DDA80077A606 /* ViewController.m */,
-				82FD589C1CD1DDA80077A606 /* Assets.xcassets */,
-				82FD589E1CD1DDA80077A606 /* LaunchScreen.storyboard */,
-				82FD58A11CD1DDA80077A606 /* Info.plist */,
-				82FD591A1CD1DF160077A606 /* FUText-Prefix.pch */,
 				82FD58901CD1DDA80077A606 /* Supporting Files */,
 			);
 			path = FUText;
@@ -1535,6 +1530,11 @@
 		82FD58901CD1DDA80077A606 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82FD589C1CD1DDA80077A606 /* Assets.xcassets */,
+				82FD589E1CD1DDA80077A606 /* LaunchScreen.storyboard */,
+				82FD58A11CD1DDA80077A606 /* Info.plist */,
+				82FD58991CD1DDA80077A606 /* Main.storyboard */,
+				82FD591A1CD1DF160077A606 /* FUText-Prefix.pch */,
 				82FD58911CD1DDA80077A606 /* main.m */,
 			);
 			name = "Supporting Files";
